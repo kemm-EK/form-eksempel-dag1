@@ -1,0 +1,291 @@
+@font-face {
+  font-family: "iso";
+  src: url("./fonts/Isometra-Regular.ttf");
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
+  > * {
+    grid-column: 2;
+  }
+  /* font-family: "iso", sans-serif; */
+}
+header,
+footer {
+  background-color: rgb(53, 53, 53);
+
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: inherit;
+  padding: 1rem 0;
+  > * {
+    grid-column: 2;
+  }
+  li,
+  p {
+    color: aliceblue;
+  }
+}
+header ul {
+  display: flex;
+  justify-content: space-around;
+  li {
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.2rem;
+  }
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+p,
+span,
+li,
+button,
+label,
+legend {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #444;
+}
+
+/* ****************************************************************** */
+/* Her starter form styling */
+/* ****************************************************************** */
+
+/* Form css */
+/* .form-wrapper {
+  display: grid;
+  gap: 1rlh;
+  max-width: 800px;
+  margin: 2rem auto;
+} */
+/* .pass-form {
+  display: grid;
+  gap: 1rlh;
+  padding: 1rlh;
+  border-radius: 12px;
+  outline: 1px solid oklch(0.8 0.03 0);
+  background: #fefcfc;
+} */
+/* .form-group {
+  display: grid;
+  gap: 0.45rlh;
+  label {
+    display: block;
+    align-items: center;
+    gap: 0.5ch;
+  }
+  .radio-group label {
+    display: flex;
+  }
+} */
+
+/* INPUT TEXT */
+/* input,
+select,
+textarea,
+button {
+  font: inherit;
+} */
+
+/* Uden særlig håndtering af påkrævede inputfelter */
+/* input[type="text"] {
+  padding: 0.45rlh 0.6rlh;
+  border-radius: 4px;
+  border: 1px solid oklch(0.8 0.03 0);
+} */
+
+/* Håndterer påkrævede inputfelter */
+/* label:has(input[type="text"]) {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0.3rem 0.5rem;
+  input {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0.45rlh 0.6rlh;
+    border-radius: 4px;
+    border: 1px solid oklch(0.8 0.03 0);
+  }
+  .error-message {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+label:has(:required)::after {
+  content: "*";
+  color: red;
+  grid-column: 3;
+  grid-row: 1;
+}
+label:has(:user-invalid) {
+  input {
+    outline: 2px solid red;
+    outline-offset: 2px;
+  }
+  .error-message {
+    display: block;
+  }
+}
+.error-message {
+  display: none;
+  color: red;
+  font-size: 0.7rem;
+} */
+
+/* Styling af fieldset */
+/* fieldset {
+  padding: 0.75rlh;
+  border: 1px solid oklch(0.8 0.03 0);
+  border-radius: 8px;
+} */
+/* fieldset fieldset {
+  padding: 0.5rlh;
+  border: 1px dashed oklch(0.8 0.03 0);
+  border-radius: 8px;
+  margin-top: 0.5rlh;
+} */
+
+/* Radio Group: ERHVERV */
+/* .radio-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+  gap: 0.5rlh;
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5ch;
+  }
+} */
+
+/* Select FAMILIE */
+/* Åben op for moderne styling af dropdown-menuen */
+/* select,
+::picker(select) {
+  appearance: base-select;
+} */
+
+/* Styling af dropdown-menuen */
+/* select {
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background: #eee;
+  color: inherit;
+} */
+
+/* Vælg baggrundsfarven mm. for dropdown menuen */
+/* ::picker(select) {
+  background: #333;
+  color: #eee;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 5px 15px #0004;
+} */
+
+/* Vælg det tegn der skal vises i dropdown menuen når den er lukket */
+/* select::picker-icon {
+  color: red;
+  transition: transform 0.3s;
+} */
+
+/* Vælg det tegn der skal vises i dropdown menuen når den er åben */
+/* select:open::picker-icon {
+  transform: rotate(180deg);
+} */
+
+/* Styling af de enkelte options i dropdown menuen */
+/* option {
+  padding: 0.75rem;
+  border-radius: 5px;
+} */
+
+/* Vælg baggrundsfarven for den option i dropdown menuen som musen er over */
+/* option:hover {
+  background: #555;
+} */
+
+/* Vælg baggrundsfarven for den valgte option i dropdown menuen */
+/* option:checked {
+  background: #784ece;
+  color: #fff;
+} */
+
+/* Vælg selv hvilket tegn der skal vises i dropdown menuen */
+/* option::checkmark {
+  content: "\2691";
+} */
+
+/* Styling af submit-knappen i formularen */
+/* .pass-form button {
+  justify-self: start;
+  padding: 0.45rlh 0.85rlh;
+  border: 1px solid #4b217c;
+  border-radius: 4px;
+  background: #4b217c;
+  color: #fff;
+} */
+
+/* Styling af occupation-input (radio-knapper) */
+/* .occupation-input {
+  appearance: none;
+  block-size: 1.1rlh;
+  inline-size: 1.1rlh;
+  border-radius: 9999px;
+  background: #e2e2e7;
+  border: 1px solid #a9abed;
+
+  &:checked {
+    outline: 2px solid #a9abed;
+    background: #2d2da6;
+    outline-offset: 2px;
+  }
+}
+.color-input:focus-visible {
+  outline: 2px solid #a9abed;
+  outline-offset: 2px;
+  box-shadow: none;
+} */
+
+/* Styling of textarea */
+/* textarea {
+  background: #fff;
+  border: none;
+  outline: 1px solid oklch(0.8 0.03 0);
+  color: inherit;
+  padding: 0.45rlh 0.6rlh;
+  border-radius: 4px;
+
+  &:focus-visible {
+    outline-color: #784fcf;
+    outline-width: 2px;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}
+input[type="checkbox"] {
+  accent-color: darkred;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+} */
